@@ -413,7 +413,7 @@ def get_values_endpoint():
             "volcanic_activity": volcanic_activity,
             "volcanic_info": volcanic_info
         },
-        "earthquake": {git 
+        "earthquake": {
             "earthquakes": earthquakes,
             "earthquake_info": earthquake_info
         }
