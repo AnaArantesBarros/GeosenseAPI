@@ -360,6 +360,35 @@ def get_values_endpoint():
     steep_terrain = True if slope > 20 else False
     volcanic_activity = True if vulcao >= 1 else False
     earthquakes = True if count_0_to_4 > 8 else True if count_4_to_6 > 2 else True if count_above_6 > 0 else False
+
+
+    if earthquakes:
+        earthquake_info = 'Earthquakes may be a danger in this area'
+    else:
+        earthquake_info = 'No earthquakes detected in this area.'
+
+
+    if volcanic_activity:
+        volcanic_info = "Active Volcanoes may be a threat to your activities"
+    else:
+        volcanic_info = 'No active Volcanoes detected in this area.'
+
+
+    if steep_terrain:
+        terrain_info = f"Terrain Slope of {slope:.2f}% can make it difficult to walk or climb"
+    else:
+        terrain_info = f"Terrain Slope of {slope:.2f}%"
+
+    if high_uv_radiation:
+        radiation_info = "High UV incidence, watch out for sunburns"
+    else:
+        radiation_info = "UV levels are within safe range"
+
+    if heavy_rain:
+        rain_info = f"Mean Precipitation of {round(int(prec),2)} mm/h can make field activities difficult"
+    else:
+        rain_info = f"Mean Precipitation of {round(int(prec),2)} mm/h"
+
     # Criando um dicionário com os dados
     result = {
         "FADI": FADI_index,
@@ -370,7 +399,7 @@ def get_values_endpoint():
         },
         "radiation": {
             "high_uv_radiation": high_uv_radiation,
-            "radiation_info": "High UV incidence, watch out for sunburns"
+            "radiation_info": radiation_info
         },
         "rain": {
             "heavy_rain": heavy_rain,
@@ -378,15 +407,15 @@ def get_values_endpoint():
         },
         "terrain": {
             "steep_terrain": steep_terrain,
-            "terrain_info": f"Terrain Slope of {slope:.2f}% can make it difficult to walk or climb"
+            "terrain_info": terrain_info
         },
         "volcan": {
             "volcanic_activity": volcanic_activity,
-            "volcanic_info": "Active Volcanoes may be a threat to your activities"
+            "volcanic_info": volcanic_info
         },
         "earthquake": {
             "earthquakes": earthquakes,
-            "earthquake_info": "Earthquakes of 5 degrees on the Richter scale occur frequently in the last year, which may be a danger in this area"
+            "earthquake_info": earthquake_info
         }
     }
 
