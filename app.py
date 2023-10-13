@@ -355,7 +355,7 @@ def get_values_endpoint():
     low_temperatures = True if tmin < 0 else False
     high_temperatures = True if tmax > 30 else False
     high_uv_radiation = True if uv_max >= 6 else False
-    temp_info = "Mean temperature of -3 Degres Celsius, extreme cold may be a risk" if low_temperatures else "Mean temperature of 36 Degres Celsius, you may be exposed to thermic stress" if high_temperatures else "Temperature is within a comfortable range"
+    temp_info = f"Mean temperature of {tmin} Degres Celsius, extreme cold may be a risk" if low_temperatures else f"Mean temperature of {tmax} Degres Celsius, you may be exposed to thermic stress" if high_temperatures else "Temperature is within a comfortable range"
     heavy_rain = True if prec > 150 else False
     steep_terrain = True if slope > 20 else False
     volcanic_activity = True if vulcao >= 1 else False
@@ -374,7 +374,7 @@ def get_values_endpoint():
         },
         "rain": {
             "heavy_rain": heavy_rain,
-            "rain_info": f"Mean Precipitation of {prec} mm/h can make field activities difficult"
+            "rain_info": f"Mean Precipitation of {round(int(prec),2)} mm/h can make field activities difficult"
         },
         "terrain": {
             "steep_terrain": steep_terrain,
