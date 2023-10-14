@@ -1,6 +1,6 @@
 
-const LAT = 12.3456;  // Substitua com a latitude desejada
-const LON = 78.9101;  // Substitua com a longitude desejada
+const LAT = -23.5505;  // Latitude para São Paulo (negativa)
+const LON = -46.6333;  // Longitude para São Paulo (negativa)
 const dataAtual = "20231005";
 const dataPassada = "20230905";
 
@@ -117,7 +117,7 @@ async function getAltitude(url) {
 function slope(altitudes) {
   const deltaElevation = altitudes[0] - altitudes[1]
   const slope = (deltaElevation/ 111.32) * 100
-  return slope.toFixed(2)
+  return Math.abs(slope.toFixed(2))
 }
     
 run(); // Chama a função para executar o código assíncrono
