@@ -1,0 +1,236 @@
+[
+  {
+    "Pais":"Antarctica",
+    "Vulcao":"Erebus",
+    "Coordenada":[-77.5294129,167.1493592]
+  },
+  {
+    "Pais":"Australia",
+    "Vulcao":"Heard",
+    "Coordenada":[33.2786225,-85.113782]
+  },
+  {
+    "Pais":"Chile",
+    "Vulcao":"Villarrica",
+    "Coordenada":[-39.2780911,-72.2274364]
+  },
+  {
+    "Pais":"Colombia",
+    "Vulcao":"Nevado del Ruiz",
+    "Coordenada":[4.95,-75.35]
+  },
+  {
+    "Pais":"Costa Rica",
+    "Vulcao":"Rincon de la Vieja",
+    "Coordenada":[40.4840865,-2.1847764]
+  },
+  {
+    "Pais":"DR Congo",
+    "Vulcao":"Nyiragongo",
+    "Coordenada":[-1.5214482,29.2499483]
+  },
+  {
+    "Pais":"DR Congo",
+    "Vulcao":"Nyamulagira",
+    "Coordenada":[-1.4122704,29.2030237]
+  },
+  {
+    "Pais":"Ecuador",
+    "Vulcao":"Reventador",
+    "Coordenada":[-0.0807135,-77.658731]
+  },
+  {
+    "Pais":"Ecuador",
+    "Vulcao":"Sangay",
+    "Coordenada":[-2.0049377,-78.3416774]
+  },
+  {
+    "Pais":"Ethiopia",
+    "Vulcao":"Erta Ale",
+    "Coordenada":[13.6030321,40.6634086]
+  },
+  {
+    "Pais":"Guatemala",
+    "Vulcao":"Santa Maria",
+    "Coordenada":[-29.6860512,-53.8069214]
+  },
+  {
+    "Pais":"Guatemala",
+    "Vulcao":"Fuego",
+    "Coordenada":[19.9576704,-104.2604855]
+  },
+  {
+    "Pais":"Indonesia",
+    "Vulcao":"Dukono",
+    "Coordenada":[1.698949,127.8791239]
+  },
+  {
+    "Pais":"Indonesia",
+    "Vulcao":"Ibu",
+    "Coordenada":[7.0874991,3.5297441]
+  },
+  {
+    "Pais":"Indonesia",
+    "Vulcao":"Karangetang",
+    "Coordenada":[2.7775257,125.4060634]
+  },
+  {
+    "Pais":"Indonesia",
+    "Vulcao":"Semeru",
+    "Coordenada":[-8.1078426,112.92248]
+  },
+  {
+    "Pais":"Indonesia",
+    "Vulcao":"Lewotolok",
+    "Coordenada":[-8.25919795,123.4714661508]
+  },
+  {
+    "Pais":"Indonesia",
+    "Vulcao":"Merapi",
+    "Coordenada":[-0.3911126,100.4571432]
+  },
+  {
+    "Pais":"Indonesia",
+    "Vulcao":"Krakatau",
+    "Coordenada":[-6.1001246,105.4228665]
+  },
+  {
+    "Pais":"Italy",
+    "Vulcao":"Stromboli",
+    "Coordenada":[38.79179625,15.2111752495]
+  },
+  {
+    "Pais":"Italy",
+    "Vulcao":"Etna",
+    "Coordenada":[37.7510251,14.9940321]
+  },
+  {
+    "Pais":"Japan",
+    "Vulcao":"Suwanosejima",
+    "Coordenada":[29.6372715,129.7133429059]
+  },
+  {
+    "Pais":"Japan",
+    "Vulcao":"Kikai",
+    "Coordenada":[28.321216,129.975103]
+  },
+  {
+    "Pais":"Japan",
+    "Vulcao":"Aira",
+    "Coordenada":[43.7006462,-0.2647028]
+  },
+  {
+    "Pais":"Japan",
+    "Vulcao":"Nishinoshima",
+    "Coordenada":[36.0931392,132.9943746]
+  },
+  {
+    "Pais":"Mexico",
+    "Vulcao":"Popocatepetl",
+    "Coordenada":[19.0226843,-98.6277258]
+  },
+  {
+    "Pais":"Nicaragua",
+    "Vulcao":"Masaya",
+    "Coordenada":[12.0008289,-86.0513672]
+  },
+  {
+    "Pais":"Papua New Guinea",
+    "Vulcao":"Bagana",
+    "Coordenada":[8.0276916,7.5967275]
+  },
+  {
+    "Pais":"Papua New Guinea",
+    "Vulcao":"Langila",
+    "Coordenada":[-16.8089838,26.9955652]
+  },
+  {
+    "Pais":"Papua New Guinea",
+    "Vulcao":"Ulawun",
+    "Coordenada":[-5.0509586,151.3313437]
+  },
+  {
+    "Pais":"Papua New Guinea",
+    "Vulcao":"Manam",
+    "Coordenada":[-4.077508,145.0359556327]
+  },
+  {
+    "Pais":"Peru",
+    "Vulcao":"Ubinas",
+    "Coordenada":[-16.3867174,-70.8558927]
+  },
+  {
+    "Pais":"Peru",
+    "Vulcao":"Sabancaya",
+    "Coordenada":[-15.79071575,-71.8547689693]
+  },
+  {
+    "Pais":"Philippines",
+    "Vulcao":"Mayon",
+    "Coordenada":[13.0593562,123.7085981]
+  },
+  {
+    "Pais":"Russia",
+    "Vulcao":"Bezymianny",
+    "Coordenada":[55.9726329,160.5952831]
+  },
+  {
+    "Pais":"Russia",
+    "Vulcao":"Klyuchevskoy",
+    "Coordenada":[56.057704404529204, 160.64145786874826]
+  },
+  {
+    "Pais":"Russia",
+    "Vulcao":"Sheveluch",
+    "Coordenada":[56.65431259725977, 161.36412845278363]
+  },
+  {
+    "Pais":"Russia",
+    "Vulcao":"Ebeko",
+    "Coordenada":[50.6857763,156.01592]
+  },
+  {
+    "Pais":"Solomon Islands",
+    "Vulcao":"Tinakula",
+    "Coordenada":[-10.3856861,165.8062054693]
+  },
+  {
+    "Pais":"Solomon Islands",
+    "Vulcao":"Kavachi",
+    "Coordenada":[-8.9936906,157.9723955]
+  },
+  {
+    "Pais":"Tanzania",
+    "Vulcao":"Ol Doinyo Lengai",
+    "Coordenada":[-2.7595453,35.9140888]
+  },
+  {
+    "Pais":"Tonga",
+    "Vulcao":"Tofua",
+    "Coordenada":[-19.7479245,-175.0684177837]
+  },
+  {
+    "Pais":"United Kingdom",
+    "Vulcao":"Saunders",
+    "Coordenada":[41.2260007,-96.6520834]
+  },
+  {
+    "Pais":"United States",
+    "Vulcao":"Shishaldin",
+    "Coordenada":[54.7563385,-163.9697562]
+  },
+  {
+    "Pais":"United States",
+    "Vulcao":"Great Sitkin",
+    "Coordenada":[52.04217505,-176.1021044603]
+  },
+  {
+    "Pais":"Vanuatu",
+    "Vulcao":"Yasur",
+    "Coordenada":[32.9010935,35.1663465]
+  }
+
+]
+
+
+
