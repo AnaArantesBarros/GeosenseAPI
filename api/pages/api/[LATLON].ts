@@ -19,6 +19,7 @@ function zfill(numero: number, largura: number) {
 const dataDeHoje = new Date();
 const dataAntes = new Date();
 dataAntes.setDate(dataDeHoje.getDate() - 35);
+dataDeHoje.setDate(dataDeHoje.getDate() - 5);
 
 const data_antes = String(zfill(dataAntes.getFullYear(),4)+zfill(dataAntes.getMonth() + 1,2)+zfill(dataAntes.getDate(),2))
 const data_hoje = String(zfill(dataDeHoje.getFullYear(),4)+zfill(dataDeHoje.getMonth() + 1,2)+zfill(dataDeHoje.getDate(),2))
@@ -85,9 +86,9 @@ async function run(LAT: number, LON:  number, dataPassada: string, dataAtual: st
       parseFloat(uv),
       terrain,
       result,
-      earthquakes?.['Magnitude < 4:'],
-      earthquakes?.['Magnitude 4-6:'],
-      earthquakes?.['Magnitude > 6:']
+      earthquakes?.['Magnitude < 4:'] || 0,
+      earthquakes?.['Magnitude 4-6:'] || 0,
+      earthquakes?.['Magnitude > 6:'] || 0
     );
 
     const resultado = {
@@ -95,7 +96,7 @@ async function run(LAT: number, LON:  number, dataPassada: string, dataAtual: st
       "temperature": {
         "low_temperatures": parseInt(nasaData.TMIN) < 0,
         "high_temperatures": parseInt(nasaData.TMAX) > 30,
-        "temp_info": `Mean temperature of ${nasaData.TMAX} Degrees Celsius, you may be exposed to thermic stress`
+        "temp_info": `Mean temperature of ${nasaData.T2M} Degrees Celsius, you may be exposed to thermic stress`
       },
       "radiation": {
         "high_uv_radiation": high_uv_radiation,
@@ -118,9 +119,8 @@ async function run(LAT: number, LON:  number, dataPassada: string, dataAtual: st
         "earthquake_info": "Earthquakes may be a danger in this area"
       }
     };
-
-    const variavel = {'valor': 'teste'}
-    return resultado//('true' in String(status).split(','))
+  
+    return resultado
 ;
   } catch (error) {
     console.error('Erro');
@@ -411,8 +411,8 @@ function getA(temperaturaMedia: number) {
   return null;
 }
 
-function getB(tmax: string, tmin: string) {
-  const temperaturaVariacao = Math.abs(parseInt(tmax) - parseInt(tmin));
+function getB(tmax: number, tmin: number) {
+  const temperaturaVariacao = Math.abs(tmax - tmin);
   const faixas = [
     [0, 5, 0],
     [5, 11, 1],
@@ -532,7 +532,19 @@ function getI(terremotosPesados: number) {
 }
 
 
-function FADI_calc(tmed: any, tmax: any, tmin: any, precipitacao: any, radiacaoUv: any, inclinacaoTerreno: any, vulcoesAtivos: any, terremotosLeves: any, terremotosMedio: any, terremotosPesados: any) {
+function FADI_calc(tmed: number, tmax: number, tmin: number, precipitacao: number, radiacaoUv: number, inclinacaoTerreno: number, vulcoesAtivos: number, terremotosLeves: number, terremotosMedio: number, terremotosPesados: number) {
+  // Substitua valores nulos ou indefinidos por zero
+  tmed = tmed || 0;
+  tmax = tmax || 0;
+  tmin = tmin || 0;
+  precipitacao = precipitacao || 0;
+  radiacaoUv = radiacaoUv || 0;
+  inclinacaoTerreno = inclinacaoTerreno || 0;
+  vulcoesAtivos = vulcoesAtivos || 0;
+  terremotosLeves = terremotosLeves || 0;
+  terremotosMedio = terremotosMedio || 0;
+  terremotosPesados = terremotosPesados || 0;
+
   const A = getA(tmed);
   const B = getB(tmax, tmin);
   const C = getC(precipitacao);
@@ -543,18 +555,11 @@ function FADI_calc(tmed: any, tmax: any, tmin: any, precipitacao: any, radiacaoU
   const H = getH(terremotosMedio);
   const I = getI(terremotosPesados);
 
-  if (A === null || B === null || C === null || D === null || E === null || F === null || G === null || H === null || I === null) {
-    return 'Argumentos inválidos';
-  }
-
-  if (A === undefined || B === undefined || C === undefined || D === undefined || E === undefined || F === undefined || G === undefined || H === undefined || I === undefined) {
-    return 'Argumentos inválidos';
-  }
-
-  const index_tempo = (((5 * A) + (2 * B) + (5 * C) + (3 * D)) / 15);
-  const geological_index = (((8 * F) + (2 * G) + (4 * H) + (6 * I)) / 20);
+  // Se todos forem válidos, continue com os cálculos
+  const index_tempo = (((5 * (A || 0)) + (2 * (B || 0)) + (5 * (C || 0)) + (3 * (D || 0))) / 15);
+  const geological_index = (((8 * (F || 0)) + (2 * (G || 0)) + (4 * (H || 0)) + (6 * (I || 0))) / 20);
   const terrain_index = E;
 
-  const result = (index_tempo + geological_index + terrain_index).toFixed(3);
+  const result = (index_tempo + geological_index + (terrain_index || 0)).toFixed(3);
   return parseFloat(result);
 }
