@@ -32,9 +32,11 @@ export default async function handler(
   const LAT = parseFloat(String(LATLON).split(",")[0]);
   const LON = parseFloat(String(LATLON).split(",")[1]);
   const resposta_run = await run(LAT, LON, data_antes, data_hoje);
-  console.log(resposta_run);
+  //console.log(resposta_run);
   //return resposta_run
-  res.status(200).json([resposta_run]);
+  const jsonFormatted = JSON.stringify(resposta_run, null, 2);
+
+  res.status(200).json(resposta_run);
 }
 
 //run(LAT, LON, dataPassada, dataAtual); // Chama a função para executar o código assíncrono
@@ -56,7 +58,6 @@ async function run(LAT: number, LON:  number, dataPassada: string, dataAtual: st
     const vulcoes = await obterTitulosEventos(urlVulcoes);
     
     let status: any[] = []; // Declare status fora do loop
-    let dataVulcoes: any[] = [];
 
     for (var vulcao in vulcoes) {
     const vulcaoData = vulcoes[vulcao];
@@ -65,7 +66,7 @@ async function run(LAT: number, LON:  number, dataPassada: string, dataAtual: st
     status.push(estaDentro)
     //dataVulcoes.push()
     }
-    let count = 0;
+    
     const altitudesPromises = urlAltitude.map(getAltitude);
     const altitudes = await Promise.all(altitudesPromises);
     const nasaData = await nasa(dataPassada, dataAtual, LAT, LON, args_nasa);
@@ -73,6 +74,8 @@ async function run(LAT: number, LON:  number, dataPassada: string, dataAtual: st
     const earthquakes = await fetchAndCountEarthquakes(LAT, LON);
     const uv = await getUv(args_uv, LAT, LON);
     const high_uv_radiation = (uv >= 6);
+    const containsTrue = String(status).includes('true');
+    const result = containsTrue ? 1 : 0;
 
     const fadi = FADI_calc(
       parseFloat(nasaData.T2M), 
@@ -81,7 +84,7 @@ async function run(LAT: number, LON:  number, dataPassada: string, dataAtual: st
       parseFloat(nasaData.PRECTOT),
       parseFloat(uv),
       terrain,
-      dataVulcoes,
+      result,
       earthquakes?.['Magnitude < 4:'],
       earthquakes?.['Magnitude 4-6:'],
       earthquakes?.['Magnitude > 6:']
@@ -107,15 +110,17 @@ async function run(LAT: number, LON:  number, dataPassada: string, dataAtual: st
         "terrain_info": `Terrain Slope of ${terrain} % can make it difficult to walk or climb`
       },
       "volcan": {
-        "volcanic_activity": status,
+        "volcanic_activity": containsTrue,
         "volcanic_info": "Active Volcanoes may be a threat to your activities"
       },
       "earthquake": {
         "earthquakes": earthquakes,
         "earthquake_info": "Earthquakes may be a danger in this area"
       }
-    }
-    return status
+    };
+
+    const variavel = {'valor': 'teste'}
+    return resultado//('true' in String(status).split(','))
 ;
   } catch (error) {
     console.error('Erro');
