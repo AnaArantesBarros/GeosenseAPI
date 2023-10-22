@@ -1,17 +1,18 @@
 # GeosenseAPI
-API for Nasa Space Apps Challenge 2023 made with Flask and the javascript version of it (in progress) for future projects.
+API for NASA Space Apps Challenge 2023, created with Flask, and the JavaScript version of it (in progress) for future projects.
 <ul>
-  <li> <strong>app.py:</strong> flask api</li>
-  <li> <strong>api.js:</strong> javascript api</li>
-  <li> <strong>webScraping.py:</strong> webscraping informations about volcanoes</li>
-  <li> <strong>vulcoes.json:</strong> list of all active vulcanoes with coordinates</li>
-  <li> <strong>Pasta api:</strong> api made in NextJS</li>
+  <li> <strong>app.py:</strong> Flask API</li>
+  <li> <strong>api.js:</strong> JavaScript API</li>
+  <li> <strong>webScraping.py:</strong> Web scraping information about volcanoes</li>
+  <li> <strong>volcanoes.json:</strong> List of all active volcanoes with coordinates</li>
+  <li> <strong>api folder:</strong> API made in Next.js</li>
 </ul> <br>
-The goal of this API is to unify geospatial data and to provide information about terrain, temperatures, ultra violet radiation (uv), earthquakes and vulcanoes. The informations used in this API was from:
+The goal of this API is to unify geospatial data and provide information about terrain, temperatures, ultraviolet radiation (UV), earthquakes, and volcanoes. The information used in this API is from:
 <ul>
-  <li> <strong>Vulcanoes:</strong> volcano.si.edu</li>
+  <li> <strong>Volcanoes:</strong> volcano.si.edu</li>
   <li> <strong>Earthquakes:</strong> seismicportal.eu</li>
-  <li> <strong>Temperatures and precipitation:</strong> NasaPower</li>
-  <li> <strong>UV index:</strong> openuv.io</li>
-  <li> <strong>UV index:</strong> OpenTopoData</li>
+  <li> <strong>Temperatures and Precipitation:</strong> NASA Power</li>
+  <li> <strong>UV Index:</strong> openuv.io</li>
+  <li> <strong>UV Index:</strong> OpenTopoData</li>
 </ul> <br>
+
