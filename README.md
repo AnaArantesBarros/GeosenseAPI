@@ -13,6 +13,6 @@ The goal of this API is to unify geospatial data and provide information about t
   <li> <strong>Earthquakes:</strong> seismicportal.eu</li>
   <li> <strong>Temperatures and Precipitation:</strong> NASA Power</li>
   <li> <strong>UV Index:</strong> openuv.io</li>
-  <li> <strong>UV Index:</strong> OpenTopoData</li>
+  <li> <strong>Altitude:</strong> OpenTopoData</li>
 </ul> <br>
 
