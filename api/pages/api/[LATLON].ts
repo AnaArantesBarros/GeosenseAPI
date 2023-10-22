@@ -108,7 +108,7 @@ async function run(LAT: number, LON:  number, dataPassada: string, dataAtual: st
       },
       "terrain": {
         "steep_terrain": terrain > 20,
-        "terrain_info": `Terrain Slope of ${terrain} % can make it difficult to walk or climb`
+        "terrain_info": `Terrain Slope of ${terrain.toFixed(2)} % can make it difficult to walk or climb`
       },
       "volcan": {
         "volcanic_activity": containsTrue,
