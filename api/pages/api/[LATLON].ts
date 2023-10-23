@@ -96,7 +96,7 @@ async function run(LAT: number, LON:  number, dataPassada: string, dataAtual: st
       "temperature": {
         "low_temperatures": parseInt(nasaData.TMIN) < 0,
         "high_temperatures": parseInt(nasaData.TMAX) > 30,
-        "temp_info": `Mean temperature of ${nasaData.T2M} Degrees Celsius, you may be exposed to thermic stress`
+        "temp_info": `Max temperature of ${nasaData.TMAX} Degrees Celsius, you may be exposed to thermic stress`
       },
       "radiation": {
         "high_uv_radiation": high_uv_radiation,
