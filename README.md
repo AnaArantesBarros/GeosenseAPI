@@ -16,3 +16,32 @@ The goal of this API is to unify geospatial data and provide information about t
   <li> <strong>Elevation:</strong> OpenTopoData</li>
 </ul> <br>
 
+# Sample API Usage Guide
+
+Welcome to the Sample API Usage Guide! This repository contains documentation on how to interact with our API, including the API endpoint, available parameters, and example requests. Whether you're a developer or just curious to see what the API can do, this guide will help you get started.
+
+## API Endpoint
+
+- **API Endpoint:** [https://geosense-api.vercel.app/api/](https://geosense-api.vercel.app/api/)
+
+## Available Parameters
+
+Our API accepts the following parameters for customization:
+
+1. `lon` (number) - Longitude.
+2. `lat` (number) - Latitude.
+
+
+## How to Use the API
+
+1. Make a GET request to the API endpoint: `https://geosense-api.vercel.app/api/`
+2. Include the desired parameters in your request. You can pass them in the query string.
+   - Example: `https://geosense-api.vercel.app/api/lat,lon`
+3. The API will respond with JSON data containing the requested information.
+
+## Example Requests
+
+
+```http
+GET https://geosense-api.vercel.app/api/-22.9064,-47.0616
+
