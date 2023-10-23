@@ -48,7 +48,7 @@ async function run(LAT: number, LON:  number, dataPassada: string, dataAtual: st
   try {
     const args_uv = {
       'Content-Type': 'application/json',
-      'x-access-token': 'openuv-key-io'
+      'x-access-token': 'openuv-11ntv7rlnfbhz2x-io'
     };
     const urlVulcoes = "https://raw.githubusercontent.com/AnaArantesBarros/GeosenseAPI/main/vulcoes.json";
     const args_nasa = "PRECTOT,T2M,T2M_MAX,T2M_MIN";
@@ -352,7 +352,7 @@ async function fetchAndCountEarthquakes(v1: number, v2: number) {
       contagemPorMagnitude.countMagnitudeAbove6 === 0;
 
     const dict = {
-      "status": todasSãoZero,
+      "status": !todasSãoZero,
       "Magnitude < 4:": contagemPorMagnitude.countMagnitude0to4,
       "Magnitude 4-6:": contagemPorMagnitude.countMagnitude4to6,
       "Magnitude > 6:": contagemPorMagnitude.countMagnitudeAbove6
