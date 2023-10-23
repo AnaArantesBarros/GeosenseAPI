@@ -48,7 +48,7 @@ async function run(LAT: number, LON:  number, dataPassada: string, dataAtual: st
   try {
     const args_uv = {
       'Content-Type': 'application/json',
-      'x-access-token': 'openuv-key-io'
+      'x-access-token': 'openuv-11ntv7rlnfbhz2x-io'
     };
     const urlVulcoes = "https://raw.githubusercontent.com/AnaArantesBarros/GeosenseAPI/main/vulcoes.json";
     const args_nasa = "PRECTOT,T2M,T2M_MAX,T2M_MIN";
